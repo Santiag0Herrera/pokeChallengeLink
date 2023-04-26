@@ -9,6 +9,10 @@
     max-width: 200px;
     text-align: center;
     transition: all 300ms;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-button:hover{

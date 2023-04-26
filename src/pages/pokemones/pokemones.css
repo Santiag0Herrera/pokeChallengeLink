@@ -12,3 +12,25 @@ th, td{
     flex-direction: row;
     align-items: flex-start;
 }
+
+.card{
+    margin: 0 10px;
+}
+
+.searchBar{
+    margin: 10px 5px 10px 0;
+}
+
+.result{
+    color: green;
+    margin: 5px 0 10px 0;
+}
+
+.pokemonButton{
+    color: #FFE;
+    background-color: #1976d2; 
+    border: 1px; 
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer
+}

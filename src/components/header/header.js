@@ -9,11 +9,10 @@ import './header.css'
 const navItems = [
     {linkName: 'Home', path: '/'}, 
     {linkName: 'Pokemones', path: '/pokemones'}, 
-    {linkName: 'Contactos', path: '/contacto'}
+    {linkName: 'Contacto', path: '/contacto'}
 ];
 
-function DrawerAppBar(props) {
-
+function DrawerAppBar() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />

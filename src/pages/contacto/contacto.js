@@ -1,8 +1,9 @@
 import React from "react";
+import ReusableCard from "../../components/reusableCard/resusableCard";
 
 const Contacto = () => {
     return(
-        <h1>This is Contacto</h1>
+        <ReusableCard cardTitle={'Contacto'}/>
     )
 }
 

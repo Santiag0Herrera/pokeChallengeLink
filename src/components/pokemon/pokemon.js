@@ -6,9 +6,8 @@ const Pokemon = (props) => {
     const [pokemonData, setPokemonData] = useState({})
 
     const fetchPokemonData = async (url) => {
-        const response = await getPokemonDetails(url);
-        console.log("poke data", response);
-        setPokemonData(response);
+        const response = await getPokemonDetails(url)
+        setPokemonData(response)
     };
 
     useEffect(()=>{
@@ -19,8 +18,8 @@ const Pokemon = (props) => {
         props.onClick()
     }
     return(
-        <div>
-        <ReusableCard name={pokemonData.name} onClick={handleClose}/>
+        <div className="card">
+        <ReusableCard img={false} button={true} pokemon={true} pokemonType={pokemonData.types} cardTitle={pokemonData.name} onClick={handleClose}/>
         </div>
     )
 }
