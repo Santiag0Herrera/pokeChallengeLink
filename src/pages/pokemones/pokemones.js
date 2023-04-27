@@ -13,7 +13,6 @@ const Pokemones = () => {
     const fetchData = async () => {
         const response = await getPokemones();
         setPokemones(response.results);
-        console.log(pokemones);
     };
 
     useEffect(()=>{
@@ -29,7 +28,6 @@ const Pokemones = () => {
     }
 
     const handleOnChange = (event) => {
-        console.log(event.target.value)
         setSearchBarValue(event.target.value)
         const newArray = pokemones.filter((pokemon) =>
             pokemon.name.toLowerCase().includes(event.target.value.toLowerCase())
