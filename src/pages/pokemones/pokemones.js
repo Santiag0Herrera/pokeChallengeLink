@@ -12,7 +12,11 @@ const Pokemones = () => {
 
     const fetchData = async () => {
         const response = await getPokemones();
-        setPokemones(response.results);
+        const updatedPokemones = response.results.map((poke, index) => ({
+            ...poke,
+            id: index + 1
+        }));
+        setPokemones(updatedPokemones);
     };
 
     useEffect(()=>{
@@ -41,7 +45,9 @@ const Pokemones = () => {
 
     return(
         <div>
-            <input placeholder="Search for a pokemon" value={searchBarValue} onChange={handleOnChange} className="searchBar"/>
+            <label for="searchBar">Search a Pokemon: </label>
+            <br />
+            <input placeholder="Example: pikachu" value={searchBarValue} onChange={handleOnChange} className="searchBar" id="searchBar"/>
             <div className="result container">
             {isMatch.length > 0 && searchBarValue != '' &&
                 <>
@@ -60,6 +66,7 @@ const Pokemones = () => {
                 <table>
                     <thead>
                         <tr>
+                            <th>N°</th>
                             <th>Nombre</th>
                             <th>Url</th>
                         </tr>
@@ -67,6 +74,7 @@ const Pokemones = () => {
                     <tbody>
                         {pokemones.map((poke) => (
                         <tr key={poke.name}>
+                            <td>{poke.id}</td>
                             <td>{poke.name}</td>
                             <td><button onClick={ () => handleOnClick(poke.url)} className="pokemonButton" >Link to Pokemon</button></td>
                         </tr>
