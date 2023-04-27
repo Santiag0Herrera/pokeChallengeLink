@@ -26,6 +26,11 @@ th, td{
     margin: 5px 0 10px 0;
 }
 
+.failResult{
+    color: red;
+    margin: 5px 0 10px 0;
+}
+
 .pokemonButton{
     color: #FFE;
     background-color: #1976d2; 

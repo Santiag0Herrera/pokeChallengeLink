@@ -42,13 +42,20 @@ const Pokemones = () => {
     return(
         <div>
             <input placeholder="Search for a pokemon" value={searchBarValue} onChange={handleOnChange} className="searchBar"/>
-            {isMatch.length > 0 && 
-            <>
-                <span className="result">Did you mean... </span>
-                { isMatch.map((item)=> <span key={item.id} className="result" > {item.name + ' - '} </span>
+            <div className="result container">
+            {isMatch.length > 0 && searchBarValue != '' &&
+                <>
+                <span className="result">Are you looking for </span>
+                { isMatch.map((item)=> <span key={item.id} className="result" > {`'${item.name}' `} </span>
                 )}
-            </>
+                <span className="result">?</span>
+                </>
             }
+            {
+                isMatch.length < 1 && searchBarValue != '' &&
+                <p className="failResult">Sorry, your pokemon is not in this list...</p>
+            }
+            </div>
             <div className="pokemones-container">
                 <table>
                     <thead>
